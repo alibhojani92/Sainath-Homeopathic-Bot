@@ -2,20 +2,23 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    // WEBHOOK VERIFY
+    // Webhook Verify
     if (request.method === "GET") {
       const mode = url.searchParams.get("hub.mode");
       const token = url.searchParams.get("hub.verify_token");
       const challenge = url.searchParams.get("hub.challenge");
 
-      if (mode === "subscribe" && token === "12345") {
+      if (
+        mode === "subscribe" &&
+        token === "sainath_verify_123"
+      ) {
         return new Response(challenge, { status: 200 });
       }
 
       return new Response("Webhook Live ✅");
     }
 
-    // INCOMING MESSAGE
+    // Incoming WhatsApp Message
     if (request.method === "POST") {
       try {
         const body = await request.json();
@@ -27,15 +30,60 @@ export default {
 
         if (message) {
           const from = message.from;
-          const text = message.text?.body?.toLowerCase() || "";
+          const text =
+            message.text?.body?.trim().toUpperCase() || "";
 
-          let reply = "🙏 Sainath Homeopathic Pharmacy ma welcome!";
+          // CSV URL
+          const csvUrl =
+            "https://raw.githubusercontent.com/alibhojani92/Sainath-Homeopathic-Bot/refs/heads/main/sbl_reckeweg_100_products-1.csv";
 
-          if (text.includes("hello") || text.includes("hi")) {
-            reply = "Hello 😊 Sainath Homeopathic Pharmacy Bot Working!";
+          const csvData = await fetch(csvUrl).then((r) =>
+            r.text()
+          );
+
+          const rows = csvData.split("\n").slice(1);
+
+          let found = null;
+
+          for (const row of rows) {
+            const cols = row.split(",");
+
+            const code =
+              cols[0]?.trim().toUpperCase();
+
+            const name =
+              cols[1]?.trim().toUpperCase();
+
+            if (
+              code === text ||
+              name.includes(text)
+            ) {
+              found = {
+                name: cols[1],
+                mrp: cols[2],
+                discount: cols[3],
+                price: cols[4],
+                stock: cols[5],
+                qty: cols[6],
+              };
+              break;
+            }
           }
 
-          const res = await fetch(
+          let reply =
+            "❌ Product not found.\nExample: R89 / BC28";
+
+          if (found) {
+            reply = `💊 ${found.name}
+
+💰 MRP: ₹${found.mrp}
+🏷 Discount: ${found.discount}%
+🔥 Final Price: ₹${found.price}
+📦 Stock: ${found.stock} pcs
+🛒 Min Qty: ${found.qty}`;
+          }
+
+          const metaResponse = await fetch(
             `https://graph.facebook.com/v25.0/${env.PHONE_NUMBER_ID}/messages`,
             {
               method: "POST",
@@ -51,13 +99,20 @@ export default {
             }
           );
 
-          console.log("Meta Reply Status:", res.status);
+          console.log(
+            "Meta Reply Status:",
+            metaResponse.status
+          );
         }
 
-        return new Response("OK", { status: 200 });
+        return new Response("OK", {
+          status: 200,
+        });
       } catch (err) {
-        console.log("ERROR:", err.message);
-        return new Response("Error", { status: 500 });
+        console.log("Error:", err);
+        return new Response("Error", {
+          status: 500,
+        });
       }
     }
 
