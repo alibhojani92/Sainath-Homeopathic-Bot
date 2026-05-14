@@ -1,0 +1,7 @@
+name = "sainath-homeopathic-bot"
+main = "worker.js"
+compatibility_date = "2025-05-14"
+
+[vars]
+VERIFY_TOKEN = "sainath_verify_123"
+PHONE_NUMBER_ID = "1160767457110407"
