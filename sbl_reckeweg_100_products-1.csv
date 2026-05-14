@@ -1,0 +1,101 @@
+code,name,mrp,discount_percent,final_price,stock,min_qty,brand
+R1,Dr. Reckeweg R1,190,25,142,100,1,Reckeweg
+R2,Dr. Reckeweg R2,200,25,150,100,1,Reckeweg
+R3,Dr. Reckeweg R3,210,25,158,100,1,Reckeweg
+R4,Dr. Reckeweg R4,220,25,165,100,1,Reckeweg
+R5,Dr. Reckeweg R5,230,25,172,100,1,Reckeweg
+R6,Dr. Reckeweg R6,240,25,180,100,1,Reckeweg
+R7,Dr. Reckeweg R7,250,25,188,100,1,Reckeweg
+R8,Dr. Reckeweg R8,180,25,135,100,1,Reckeweg
+R9,Dr. Reckeweg R9,190,25,142,100,1,Reckeweg
+R10,Dr. Reckeweg R10,200,25,150,100,1,Reckeweg
+R11,Dr. Reckeweg R11,210,25,158,100,1,Reckeweg
+R12,Dr. Reckeweg R12,220,25,165,100,1,Reckeweg
+R13,Dr. Reckeweg R13,230,25,172,100,1,Reckeweg
+R14,Dr. Reckeweg R14,240,25,180,100,1,Reckeweg
+R15,Dr. Reckeweg R15,250,25,188,100,1,Reckeweg
+R16,Dr. Reckeweg R16,180,25,135,100,1,Reckeweg
+R17,Dr. Reckeweg R17,190,25,142,100,1,Reckeweg
+R18,Dr. Reckeweg R18,200,25,150,100,1,Reckeweg
+R19,Dr. Reckeweg R19,210,25,158,100,1,Reckeweg
+R20,Dr. Reckeweg R20,220,25,165,100,1,Reckeweg
+R21,Dr. Reckeweg R21,230,25,172,100,1,Reckeweg
+R22,Dr. Reckeweg R22,240,25,180,100,1,Reckeweg
+R23,Dr. Reckeweg R23,250,25,188,100,1,Reckeweg
+R24,Dr. Reckeweg R24,180,25,135,100,1,Reckeweg
+R25,Dr. Reckeweg R25,190,25,142,100,1,Reckeweg
+R26,Dr. Reckeweg R26,200,25,150,100,1,Reckeweg
+R27,Dr. Reckeweg R27,210,25,158,100,1,Reckeweg
+R28,Dr. Reckeweg R28,220,25,165,100,1,Reckeweg
+R29,Dr. Reckeweg R29,230,25,172,100,1,Reckeweg
+R30,Dr. Reckeweg R30,240,25,180,100,1,Reckeweg
+R31,Dr. Reckeweg R31,250,25,188,100,1,Reckeweg
+R32,Dr. Reckeweg R32,180,25,135,100,1,Reckeweg
+R33,Dr. Reckeweg R33,190,25,142,100,1,Reckeweg
+R34,Dr. Reckeweg R34,200,25,150,100,1,Reckeweg
+R35,Dr. Reckeweg R35,210,25,158,100,1,Reckeweg
+R36,Dr. Reckeweg R36,220,25,165,100,1,Reckeweg
+R37,Dr. Reckeweg R37,230,25,172,100,1,Reckeweg
+R38,Dr. Reckeweg R38,240,25,180,100,1,Reckeweg
+R39,Dr. Reckeweg R39,250,25,188,100,1,Reckeweg
+R40,Dr. Reckeweg R40,180,25,135,100,1,Reckeweg
+R41,Dr. Reckeweg R41,190,25,142,100,1,Reckeweg
+R42,Dr. Reckeweg R42,200,25,150,100,1,Reckeweg
+R43,Dr. Reckeweg R43,210,25,158,100,1,Reckeweg
+R44,Dr. Reckeweg R44,220,25,165,100,1,Reckeweg
+R45,Dr. Reckeweg R45,230,25,172,100,1,Reckeweg
+R46,Dr. Reckeweg R46,240,25,180,100,1,Reckeweg
+R47,Dr. Reckeweg R47,250,25,188,100,1,Reckeweg
+R48,Dr. Reckeweg R48,180,25,135,100,1,Reckeweg
+R49,Dr. Reckeweg R49,190,25,142,100,1,Reckeweg
+R50,Dr. Reckeweg R50,200,25,150,100,1,Reckeweg
+BC1,SBL Bio Combination 1,130,25,98,100,1,SBL
+BC2,SBL Bio Combination 2,140,25,105,100,1,SBL
+BC3,SBL Bio Combination 3,150,25,112,100,1,SBL
+BC4,SBL Bio Combination 4,160,25,120,100,1,SBL
+BC5,SBL Bio Combination 5,170,25,128,100,1,SBL
+BC6,SBL Bio Combination 6,120,25,90,100,1,SBL
+BC7,SBL Bio Combination 7,130,25,98,100,1,SBL
+BC8,SBL Bio Combination 8,140,25,105,100,1,SBL
+BC9,SBL Bio Combination 9,150,25,112,100,1,SBL
+BC10,SBL Bio Combination 10,160,25,120,100,1,SBL
+BC11,SBL Bio Combination 11,170,25,128,100,1,SBL
+BC12,SBL Bio Combination 12,120,25,90,100,1,SBL
+BC13,SBL Bio Combination 13,130,25,98,100,1,SBL
+BC14,SBL Bio Combination 14,140,25,105,100,1,SBL
+BC15,SBL Bio Combination 15,150,25,112,100,1,SBL
+BC16,SBL Bio Combination 16,160,25,120,100,1,SBL
+BC17,SBL Bio Combination 17,170,25,128,100,1,SBL
+BC18,SBL Bio Combination 18,120,25,90,100,1,SBL
+BC19,SBL Bio Combination 19,130,25,98,100,1,SBL
+BC20,SBL Bio Combination 20,140,25,105,100,1,SBL
+BC21,SBL Bio Combination 21,150,25,112,100,1,SBL
+BC22,SBL Bio Combination 22,160,25,120,100,1,SBL
+BC23,SBL Bio Combination 23,170,25,128,100,1,SBL
+BC24,SBL Bio Combination 24,120,25,90,100,1,SBL
+BC25,SBL Bio Combination 25,130,25,98,100,1,SBL
+BC26,SBL Bio Combination 26,140,25,105,100,1,SBL
+BC27,SBL Bio Combination 27,150,25,112,100,1,SBL
+BC28,SBL Bio Combination 28,160,25,120,100,1,SBL
+SBL1,SBL Nux Vomica 30,120,25,90,100,1,SBL
+SBL2,SBL Belladonna 30,130,25,98,100,1,SBL
+SBL3,SBL Arnica 30,140,25,105,100,1,SBL
+SBL4,SBL Rhus Tox 30,150,25,112,100,1,SBL
+SBL5,SBL Bryonia 30,110,25,82,100,1,SBL
+SBL6,SBL Lycopodium 30,120,25,90,100,1,SBL
+SBL7,SBL Sulphur 30,130,25,98,100,1,SBL
+SBL8,SBL Pulsatilla 30,140,25,105,100,1,SBL
+SBL9,SBL Calcarea Carb 30,150,25,112,100,1,SBL
+SBL10,SBL Arsenic Alb 30,110,25,82,100,1,SBL
+SBL11,SBL Gelsemium 30,120,25,90,100,1,SBL
+SBL12,SBL Aconite 30,130,25,98,100,1,SBL
+SBL13,SBL Hepar Sulph 30,140,25,105,100,1,SBL
+SBL14,SBL Merc Sol 30,150,25,112,100,1,SBL
+SBL15,SBL Natrum Mur 30,110,25,82,100,1,SBL
+SBL16,SBL Thuja 30,120,25,90,100,1,SBL
+SBL17,SBL Silicea 30,130,25,98,100,1,SBL
+SBL18,SBL Sepia 30,140,25,105,100,1,SBL
+SBL19,SBL Apis Mellifica 30,150,25,112,100,1,SBL
+SBL20,SBL Chamomilla 30,110,25,82,100,1,SBL
+SBL21,SBL Ferrum Phos 30,120,25,90,100,1,SBL
+SBL22,SBL Kali Phos 30,130,25,98,100,1,SBL
