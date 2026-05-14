@@ -1,98 +1,55 @@
 export default {
   async fetch(request, env) {
-
-    const url = new URL(request.url);
-
-    // Webhook verification
     if (request.method === "GET") {
+      const url = new URL(request.url);
+
       const mode = url.searchParams.get("hub.mode");
       const token = url.searchParams.get("hub.verify_token");
       const challenge = url.searchParams.get("hub.challenge");
 
-      if (mode === "subscribe" &&
-          token === env.VERIFY_TOKEN) {
-        return new Response(challenge, {
-          status: 200
-        });
+      if (mode === "subscribe" && token === "sainath_verify_123") {
+        return new Response(challenge, { status: 200 });
       }
 
-      return new Response("Forbidden", {
-        status: 403
-      });
+      return new Response("Webhook Live ✅");
     }
 
-    // Receive WhatsApp messages
     if (request.method === "POST") {
-      try {
-        const body = await request.json();
+      const body = await request.json();
 
-        const message =
-          body.entry?.[0]?.changes?.[0]?.value?.messages?.[0];
+      const message =
+        body?.entry?.[0]?.changes?.[0]?.value?.messages?.[0];
 
-        if (message) {
-          const from = message.from;
-          const text =
-            message.text?.body?.toLowerCase() || "";
+      if (message) {
+        const from = message.from;
+        const text = message.text?.body?.toLowerCase() || "";
 
-          let reply =
-            "Welcome to Sainath Homeopathic Pharmacy 😊 Please send your medicine name.";
+        let reply = "🙏 Sainath Homeopathic Pharmacy ma welcome!";
 
-          // Greetings
-          if (
-            text === "hi" ||
-            text === "hello" ||
-            text === "hey"
-          ) {
-            reply =
-`👋 Hello!
-
-Welcome to Sainath Homeopathic Pharmacy 💊
-
-Please send your medicine name.`;
-          }
-
-          // Example SBL reply
-          if (text.includes("sbl")) {
-            reply =
-`✅ SBL product available.
-
-Please send product name.`;
-          }
-
-          // Send reply
-          await fetch(
-            `https://graph.facebook.com/v25.0/${env.PHONE_NUMBER_ID}/messages`,
-            {
-              method: "POST",
-              headers: {
-                "Authorization":
-                  `Bearer ${env.ACCESS_TOKEN}`,
-                "Content-Type":
-                  "application/json"
-              },
-              body: JSON.stringify({
-                messaging_product: "whatsapp",
-                to: from,
-                text: {
-                  body: reply
-                }
-              })
-            }
-          );
+        if (text.includes("hello") || text.includes("hi")) {
+          reply = "Hello 😊 Sainath Homeopathic Pharmacy Bot Working!";
         }
 
-        return new Response("EVENT_RECEIVED", {
-          status: 200
-        });
-
-      } catch (err) {
-        return new Response(
-          "Error: " + err.message,
-          { status: 500 }
+        await fetch(
+          `https://graph.facebook.com/v25.0/${env.PHONE_NUMBER_ID}/messages`,
+          {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${env.WHATSAPP_TOKEN}`,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              messaging_product: "whatsapp",
+              to: from,
+              text: { body: reply },
+            }),
+          }
         );
       }
+
+      return new Response("OK", { status: 200 });
     }
 
-    return new Response("Bot Running 😎");
-  }
+    return new Response("Bot Live 🚀");
+  },
 };
